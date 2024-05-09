@@ -102,7 +102,7 @@ Website: https://daehwankimlab.github.io/hisat2/
 
 Download Link: https://daehwankimlab.github.io/hisat2/download/
 
-HISAT2 How: https://daehwankimlab.github.io/hisat2/howto/
+HISAT2 HowTo: https://daehwankimlab.github.io/hisat2/howto/
 
 ```linux
 hisat2 -q -x chrX_data/indexes/chrX_tran -1 chrX_data/samples/ERR*_chrX_1.fastq -2 chrX_data/samples/ERR1*_chrX_2.fastq -S ERR*_chrX.sam
@@ -181,8 +181,7 @@ Helper: https://www.biostars.org/p/56246/
 
 Other information:
 
-IGV (Integrative Genomics Viewer)
-BAM (Binary Alignment Map)
+IGV (Integrative Genomics Viewer) - BAM (Binary Alignment Map)
 
 A BAM file is the binary version of a SAM file and is used to assemble aligned reads into transcripts using StringTie and is also the preferred file format for viewing in IGV. 
 
