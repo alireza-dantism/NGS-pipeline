@@ -1,7 +1,7 @@
 # NGS pipeline
 Just a number of steps to analyze data
 
-# Part 1 - Commands - Linux
+# Step 1 - Commands - Linux
 
 ## 1-1) Preparing Data
 
@@ -44,7 +44,7 @@ can be used to convert the prefetched Runs from compressed SRA format to fastq
     * SRR0000001_2.fastq => right pair
     * SRR0000001.fastq => unpaired 
  
- **we can remove unpaired file**
+ **we can remove unpaired files**
 
 ## 1-3) Download, install and use of FastQC library
 
@@ -81,10 +81,19 @@ java -jar <path to trimmomatic.jar> PE *_1.fastq *_2.fastq -baseout ../trimming
     * _trimmed_2.fastq
     * _untrimmed_2.fastq
 
-**Surviving Both should be more than 80%**
+**Surviving both should be more than 80%**
 
 More advanced:
 
 ```linux
 for i in *_1.fastq; do echo $i; java -jar ../../Trimmomatic-0.39/trimmomatic-0.39.jar PE $i ${i/_1/_2} -baseout ../trimmingOutput/${i/_chrX*/} LEADING:25 TRAILING:25 SLIDINGWINDOW:4:20 MINLEN:50; done
 ```
+
+---  
+
+# Step 2 - Commands - Linux
+
+## 2-1) 
+
+
+
