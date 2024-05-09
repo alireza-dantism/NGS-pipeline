@@ -11,7 +11,7 @@ In the opened page under study section click on all runs
 
 Then we need all SRR numbers
 
-* Project number is in paper
+_Project number is in paper_
 
 NCBI Run Browser: 
 https://www.ncbi.nlm.nih.gov/Traces/index.html?view=run_browser&display=metadata
