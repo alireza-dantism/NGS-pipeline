@@ -28,7 +28,7 @@ Open SRA Toolkit bin Directory:
 We run this command because it set a some configuration that do not download unnecessary files during prefetch command
 
 ```linux
-./prefetch -p SRR—Accession-Number O ~/Desktop
+./prefetch -p SRR—Accession-Number -O ~/Desktop
 ```
 prefetch <accession> will download the <accession> run file and its dependencies
 * Input => accession number such as SRR0000001
