@@ -243,3 +243,12 @@ Counts = read.table('ERR188044.count', sep = '\t')[,2]
 | 1 |
 | 0 |
 | ... |
+
+## 3-1-2) Merging all Count files
+
+```R
+for (i in dir("/project-result/3-countsOutput/", full.names = T)[-1]) {
+  Counts = cbind((Counts), read.table(i)[,2])
+}
+```
+
