@@ -13,7 +13,7 @@ Then we need all SRR numbers
 
 _Project number is in paper_
 
-*NCBI Run Browser:*
+**NCBI Run Browser:**
 
 https://www.ncbi.nlm.nih.gov/Traces/index.html?view=run_browser&display=metadata
 https://www.ncbi.nlm.nih.gov/Traces/index.html?view=run_browser&acc=SRR000002&display=metadata
