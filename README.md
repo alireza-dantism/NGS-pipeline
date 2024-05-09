@@ -3,7 +3,7 @@ Just a number of steps to analyze data
 
 # Part 1 - Commands - Linux
 
-## 1)————————————
+## 1-1) Preparing Data
 
 Searching project number: PRJNA1106990 in https://www.ncbi.nlm.nih.gov/sra
 
@@ -17,7 +17,7 @@ NCBI Run Browser:
 https://www.ncbi.nlm.nih.gov/Traces/index.html?view=run_browser&display=metadata
 https://www.ncbi.nlm.nih.gov/Traces/index.html?view=run_browser&acc=SRR000002&display=metadata
 
-## 2) Download, install and use of SRAToolkit library
+## 1-2) Download, install and use of SRAToolkit library
 
 Open SRA Toolkit bin Directory:
 
@@ -45,7 +45,7 @@ can be used to convert the prefetched Runs from compressed SRA format to fastq
  
  * we can remove unpaired file
 
-## 3) Download, install and use of FastQC library
+## 1-3) Download, install and use of FastQC library
 
 FastQC aims to provide a simple way to do some quality control checks on raw sequence data coming from high throughput sequencing pipelines. It provides a modular set of analyses which you can use to give a quick impression of whether your data has any problems of which you should be aware before doing any further analysis.
 
@@ -61,7 +61,7 @@ fastqc -f fastq SRR0000001_1.fastq SRR0000001_2.fastq
 
 FastQC Manual: https://mugenomicscore.missouri.edu/PDF/FastQC_Manual.pdf
 
-## 4) Download, install and use of Trimmomatic library
+## 1-4) Download, install and use of Trimmomatic library
 
 Trimmomatic Manual: V0.32 => http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/TrimmomaticManual_V0.32.pdf
 
