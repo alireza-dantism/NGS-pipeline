@@ -44,7 +44,7 @@ can be used to convert the prefetched Runs from compressed SRA format to fastq
     * SRR0000001_2.fastq => right pair
     * SRR0000001.fastq => unpaired 
  
- * we can remove unpaired file
+ **we can remove unpaired file**
 
 ## 1-3) Download, install and use of FastQC library
 
@@ -81,7 +81,7 @@ java -jar <path to trimmomatic.jar> PE *_1.fastq *_2.fastq -baseout ../trimming
     * _trimmed_2.fastq
     * _untrimmed_2.fastq
 
-* Surviving Both should be more than 80%
+**Surviving Both should be more than 80%**
 
 More advanced:
 
