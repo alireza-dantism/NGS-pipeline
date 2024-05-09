@@ -217,3 +217,22 @@ for i in *.sam; do echo $i; htseq-count $i ../genes/chrX.gtf > ../countsOutput/$
 install.packages("BiocManager")
 require(DESeq2)
 ```
+
+## 3-1) Preparing Data
+
+Sample of Count file:
+
+| GeneID        | Count           |
+| ------------- |:-------------:|
+| NM_000032	| 0 |
+| NM_000033	| 86 |
+| NM_000044	| 1 |
+| NM_000047	| 0 |
+| ... | ... |
+
+```R
+Counts = read.table('ERR188044.count', sep = '\t')[,2]
+```
+
+* Output => retrieve only second column values
+
