@@ -93,7 +93,117 @@ for i in *_1.fastq; do echo $i; java -jar ../../Trimmomatic-0.39/trimmomatic-0.3
 
 # Step 2 (Linux Commands)
 
-## 2-1) 
+## 2-1) Download, install and use of HISAT2 library
+
+HISAT2 is a fast and sensitive alignment program for mapping next-generation sequencing reads (both DNA and RNA) to a population of human genomes as well as to a single reference genome. 
+HISAT2 uses a large set of small GFM indexes that collectively cover the whole genome. These small indexes (called local indexes), combined with several alignment strategies, enable rapid and accurate alignment of sequencing reads. This new indexing scheme is called a Hierarchical Graph FM index (HGFM).
+
+Website: https://daehwankimlab.github.io/hisat2/
+Download Link: https://daehwankimlab.github.io/hisat2/download/
+HISAT2 How: https://daehwankimlab.github.io/hisat2/howto/
+
+```linux
+hisat2 -q -x chrX_data/indexes/chrX_tran -1 chrX_data/samples/ERR*_chrX_1.fastq -2 chrX_data/samples/ERR1*_chrX_2.fastq -S ERR*_chrX.sam
+```
+
+* Input = > 
+    * ‘-x’ the indexed reference genome directories (use prefix file name)
+    * ‘-1’ and ‘-2’ are used to denote our fwd and rev samples in a paired-end alignment
+    * ‘-S’ is used to denote that we would like our output in SAM format
+    * ‘-p 8’ denoting the use of 8 threads, ‘–dta’ is used to generate output SAM files
+* Output => .sam file
 
 
+More advanced:
 
+Here is a bash script for the above HISAT2 command called hisat2.sh that will run all the .fastq.gz files for you simultaneously.
+
+```linux
+#!/usr/bin/bash
+
+#bash script for hisat2; align all .fastq.gz files to indexed reference genome to generate .sam files
+
+SAMPLES="ERR188044 ERR188104 ERR188234 ERR188245 ERR188257"
+
+for SAMPLE in $SAMPLES; do
+    hisat2 -p 11 --dta -x ~/chrX_data/indexes/chrX_tran -1 ~/chrX_data/samples/${SAMPLE}_chrX_1.fastq.gz -2 ~/chrX_data/samples/${SAMPLE}_chrX_2.fastq.gz -S ${SAMPLE}_chrX.sam
+done
+```
+
+— OR —
+
+```linux
+for i in *_1P; do echo $i; ../../hisat2-2.2.1/hisat2 -q -x ../indexes/chrX_tran -1 $i -2 ${i/_1/_2} --add-chrname -S ../hisat2Output/${i/_1P/.sam}; done
+```
+
+If we have not index files use below first:
+
+```linux
+hisat2-build [options]* <reference_in> <ht2_base>
+```
+
+hisat2-build outputs a set of 6 files with suffixes .1.ht2, .2.ht2, .3.ht2, .4.ht2, .5.ht2, .6.ht2, .7.ht2, and .8.ht2. In the case of a large index these suffixes will have a ht2l termination. These files together constitute the index: they are all that is needed to align reads to that reference. The original sequence FASTA files are no longer used by HISAT2 once the index is built.
+
+Helper: https://open.bioqueue.org/home/knowledge/showKnowledge/sig/hisat2-build
+
+## 2-2) Filtering the .sam file
+
+Samtools website: https://www.htslib.org/
+
+Samtools is a set of programs for interacting with high-throughput sequencing data. It is helpful for converting SAM, BAM and CRAM files. One of the most used commands is the “samtools view,” which takes .BAM/.SAM files as input and converts them to .SAM/.BAM, respectively. The “-S” and “-b” commands are used. The alignment of fastq files occurs in random order with the position in the reference genome. Therefore, in “samtools sort,” the BAM files sorting is performed. The “-o” command indicates the output file.
+
+In the sam file second column we have flags and we have to convert these number ro binary format and check if it consists of 4, remove that read
+
+```linux
+samtools view -b -F 4 .sam > mapped.bam
+```
+
+* Input => .sam file (it consist of unmapped data)
+* Output => .bam file which consists of only mapped data
+
+| Flag        | Chr           | Description  |
+| ------------- |:-------------:| -----:|
+| 0x0001      | p       | the read is paired in sequencing |
+| 0x0002      | P       | the read is mapped in a proper pair |
+| 0x0004      | u       | the query sequence itself is unmapped |
+| 0x0008      | U       | the mate is unmapped |
+| 0x0010      | r       | strand of the query (1 for reverse) |
+| 0x0020      | R      | strand of the mate |
+| 0x0040      | 1       | the read is the first read in a pair |
+| 0x0080      | 2       | the read is the second read in a pair |
+| 0x0100      | s       | the alignment is not primary |
+| 0x0200      | f       | the read fails platform/vendor quality checks |
+| 0x0400      | d       | the read is either a PCR or an optical duplicate |
+
+Helper: https://www.biostars.org/p/56246/
+
+Other information:
+
+IGV (Integrative Genomics Viewer)
+BAM (Binary Alignment Map)
+
+A BAM file is the binary version of a SAM file and is used to assemble aligned reads into transcripts using StringTie and is also the preferred file format for viewing in IGV. 
+
+Sorting:
+```linux
+samtools sort -@ 1 -o map/ERR188044_chrX.bam map/ERR188044_chrX.sam
+```
+
+## 2-3) Counting by htseq-count
+
+Given a file with aligned sequencing reads and a list of genomic features, htseq-count can be used to count how many reads map to each feature.
+
+**Requires .gtf file (Genome Transfer Format)**
+
+```linux
+htseq-count --format bam sorted_alignment_file.bam genome_annotation > .count
+```
+
+* Input => .bam file , gtf file
+* Output => .count file
+
+Advanced:
+
+```linux
+for i in *.sam; do echo $i; htseq-count $i ../genes/chrX.gtf > ../countsOutput/${i/sam/count}; done
+```
