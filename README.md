@@ -236,6 +236,8 @@ Counts = read.table('ERR188044.count', sep = '\t')[,2]
 
 * Output => retrieve only second column values
 
+| Count           |
+|:-------------:|
 | 0 |
 | 86 |
 | 1 |
