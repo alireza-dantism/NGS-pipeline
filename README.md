@@ -42,7 +42,8 @@ can be used to convert the prefetched Runs from compressed SRA format to fastq
     * SRR0000001_1.fastq => left pair
     * SRR0000001_2.fastq => right pair
     * SRR0000001.fastq => unpaired 
-    * * we can remove unpaired file
+ 
+ * we can remove unpaired file
 
 ## 3) Download, install and use of FastQC library
 
@@ -54,14 +55,16 @@ Website: https://www.bioinformatics.babraham.ac.uk/projects/fastqc/
 fastqc -f fastq SRR0000001_1.fastq SRR0000001_2.fastq
 ```
 
-Input => _1.fastq & _2.fasta files
-Output => Visualizing quality of samples based on .html files
+
+* Input => _1.fastq & _2.fasta files
+* Output => Visualizing quality of samples based on .html files
 
 FastQC Manual: https://mugenomicscore.missouri.edu/PDF/FastQC_Manual.pdf
 
 ## 4) Download, install and use of Trimmomatic library
 
 Trimmomatic Manual: V0.32 => http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/TrimmomaticManual_V0.32.pdf
+
 Commands: http://www.usadellab.org/cms/?page=trimmomatic
 
 Trimmomatic is a fast, multithreaded command line tool that can be used to trim and crop Illumina (FASTQ) data as well as to remove adapters. These adapters can pose a real problem depending on the library preparation and downstream application.
