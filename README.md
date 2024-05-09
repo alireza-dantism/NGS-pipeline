@@ -5,7 +5,7 @@ Just a number of steps to analyze data
 
 ## 1-1) Preparing Data
 
-Searching project number: PRJNA1106990 in https://www.ncbi.nlm.nih.gov/sra
+Searching project number: PRJNA000001 in https://www.ncbi.nlm.nih.gov/sra
 
 In the opened page under study section click on all runs
 
