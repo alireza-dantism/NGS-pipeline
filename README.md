@@ -208,3 +208,12 @@ Advanced:
 ```linux
 for i in *.sam; do echo $i; htseq-count $i ../genes/chrX.gtf > ../countsOutput/${i/sam/count}; done
 ```
+
+# Step 3 (DESeq2 in R)
+
+## 3-1) Install and load DESeq2 in R
+
+```R
+install.packages("BiocManager")
+require(DESeq2)
+```
