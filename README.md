@@ -1,7 +1,7 @@
 # NGS pipeline
 Just a number of steps to analyze data
 
-# Step 1 - Commands - Linux
+# Step 1 (Linux Commands)
 
 ## 1-1) Preparing Data
 
@@ -91,7 +91,7 @@ for i in *_1.fastq; do echo $i; java -jar ../../Trimmomatic-0.39/trimmomatic-0.3
 
 ---  
 
-# Step 2 - Commands - Linux
+# Step 2 (Linux Commands)
 
 ## 2-1) 
 
