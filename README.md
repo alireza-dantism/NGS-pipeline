@@ -162,7 +162,7 @@ samtools view -b -F 4 .sam > mapped.bam
 * Output => .bam file which consists of only mapped data
 
 | Flag        | Chr           | Description  |
-| ------------- |:-------------:| -----:|
+| ------------- |:-------------:|: -----|
 | 0x0001      | p       | the read is paired in sequencing |
 | 0x0002      | P       | the read is mapped in a proper pair |
 | 0x0004      | u       | the query sequence itself is unmapped |
