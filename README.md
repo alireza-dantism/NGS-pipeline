@@ -99,7 +99,9 @@ HISAT2 is a fast and sensitive alignment program for mapping next-generation se
 HISAT2 uses a large set of small GFM indexes that collectively cover the whole genome. These small indexes (called local indexes), combined with several alignment strategies, enable rapid and accurate alignment of sequencing reads. This new indexing scheme is called a Hierarchical Graph FM index (HGFM).
 
 Website: https://daehwankimlab.github.io/hisat2/
+
 Download Link: https://daehwankimlab.github.io/hisat2/download/
+
 HISAT2 How: https://daehwankimlab.github.io/hisat2/howto/
 
 ```linux
