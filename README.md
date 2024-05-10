@@ -304,7 +304,7 @@ Class = data.frame(Population = as.factor(Class))
     * 11        YRI
     * 12        YRI
 
-## 3-2) Using DESeq2 based on (Class, CountsMatrix)
+### 3-2) Using DESeq2 based on (Class, CountsMatrix)
 
 ```R
 DESeq2Obj = DESeqDataSetFromMatrix(CountsMatrix, Class, ~Population)
