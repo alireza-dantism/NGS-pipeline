@@ -20,6 +20,8 @@ https://www.ncbi.nlm.nih.gov/Traces/index.html?view=run_browser&acc=SRR000002&di
 
 ## 1-2) Download, install and use of SRAToolkit library
 
+https://github.com/ncbi/sra-tools/wiki/01.-Downloading-SRA-Toolkit
+
 Open SRA Toolkit bin Directory:
 
 ```linux
