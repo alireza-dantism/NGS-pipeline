@@ -339,7 +339,7 @@ DEGresult = DEGresult[which(DEGresult$log2FoldChange <= -1),]
 
 # Step 4 (Plots)
 
-## 1) Convert DEGresult to data.frame()
+## 4-1) Convert DEGresult to data.frame()
 
 ```R
 DEGresult = data.frame(results(CountsNorm))
@@ -350,3 +350,21 @@ DEGresult = data.frame(results(CountsNorm))
 |  NM_000032  | 8.01E-02 | 0.401214 | 3.11654 | 0.128737 | 0.897566 | NA |
 |  NM_000033  | 6.31E+01 | -0.50344 | 0.232943 | -2.16119 | 0.03068 | 0.31703 |
 |  NM_0000**  | ... | ... | ... | ... | ... | ... |
+
+## 4-2) Removing NA in padj column
+
+```R
+DEGresult$padj = p.adjust(DEGresult$pvalue, method = "BH" )
+DEGresult = DEGresult[order(DEGresult$padj),]
+```
+
+## 4-3) plotCounts()
+
+Plot of normalized counts for a single gene on log scale
+
+```R
+plotCounts(CountsNorm, gene = "NM_013444", intgroup = "Population")
+```
+
+
+
