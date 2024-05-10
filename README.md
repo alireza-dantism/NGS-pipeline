@@ -336,3 +336,7 @@ DEGresult = DEGresult[which(DEGresult$pvalue < 0.05),]
 DEGresult = DEGresult[which(DEGresult$log2FoldChange >= 1),]
 DEGresult = DEGresult[which(DEGresult$log2FoldChange <= -1),]
 ```
+
+# Step 4 (Plots)
+
+## 1) Convert DEGresult to data.frame()
