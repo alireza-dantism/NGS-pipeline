@@ -378,4 +378,29 @@ plotMA(CountsNorm)
 ![alt text](https://github.com/alireza-dantism/NGS-pipeline/raw/main/images/plotMA.png?raw=true "plotMA")
 
 
+## 4-5) Volcano plot
 
+A volcano plot is constructed by plotting the negative logarithm of the p value on the y axis (usually base 10).
+
+```R
+require(ggplot2)
+ggplot(DEGresult[which(DEGresult$pvalue < 1),], aes(x = log2FoldChange, y = -log10(pvalue))) + geom_point()
+```
+
+![alt text](https://github.com/alireza-dantism/NGS-pipeline/raw/main/images/volcano.png?raw=true "volcanoPlot")
+
+### 4-5-1) Volcano plot with lines
+
+```R
+ggplot(DEGresult[which(DEGresult$pvalue < 1),], aes(x = log2FoldChange, y = -log10(pvalue))) + geom_point() + geom_hline(yintercept = 2) + geom_vline(xintercept = c(1,-1) )
+```
+
+![alt text](https://github.com/alireza-dantism/NGS-pipeline/raw/main/images/volcano_with_lines.png?raw=true "volcanoPlotWithLines")
+
+### 4-5-2) Volcano plot colorised 
+
+```R
+ggplot(DEGresult[which(DEGresult$pvalue < 1),], aes(x = log2FoldChange, y = -log10(pvalue), colour = Color)) + geom_point() + geom_hline(yintercept = 2) + geom_vline(xintercept = c(1,-1) ) + theme_classic() + scale_colour_manual(labels = c("NonDeg", "DownRegulateGenes", "UpRegulateGenes"), values = c("black", "blue", "red"))
+```
+
+![alt text](https://github.com/alireza-dantism/NGS-pipeline/raw/main/images/volcano_color_2.png?raw=true "volcanoPlotWithLinesAndColour")
