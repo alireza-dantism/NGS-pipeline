@@ -258,11 +258,48 @@ for (i in dir("/project-result/3-countsOutput/", full.names = T)[-1]) {
 }
 ```
 
-|         | V1           | V2           | V3           | ...           |
-| ------------- |:-------------:|:-------------:||:-------------:|
-| NM_000032	| 0 | 0 | 0 | 0 |
-| NM_000033	| 86 | 0 | 0 | 0 |
-| NM_000044	| 1 | 0 | 0 | 0 |
-| NM_000047	| 0 | 0 | 0 | 0 |
-| ... | ... | ... | ... | ... |
+```R
+rownames(Counts) = read.table('/3-countsOutput/ERR188044.count', sep = '\t')[,1]
+```
+
+```R
+Counts = Counts[-grep("__",rownames(Counts)),] 
+```
+
+* Output => removing the lines in data which are meta data in starts with ‘__’
+
+```R
+CountsMatrix = as.matrix(Counts)
+```
+
+* Output => Convert Counts into the Matrix
+
+Tip: as.matrix() mixed logical-integer will give a nteger matrix
+
+```R
+Class = read.csv("geuvadis_phenodata.csv")[,3]
+```
+
+* Output = >  [1] "YRI" "YRI" "YRI" "GBR" "GBR" "YRI" "GBR" "GBR" "GBR" "GBR" "YRI" "YRI"
+
+```R
+Class = data.frame(Population = as.factor(Class))
+```
+
+* Output =>
+        * Population
+    * 1         YRI
+    * 2         YRI
+    * 3         YRI
+    * 4         GBR
+    * 5         GBR
+    * 6         YRI
+    * 7         GBR
+    * 8         GBR
+    * 9         GBR
+    * 10        GBR
+    * 11        YRI
+    * 12        YRI
+
+
 
