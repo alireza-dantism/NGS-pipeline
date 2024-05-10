@@ -340,3 +340,9 @@ DEGresult = DEGresult[which(DEGresult$log2FoldChange <= -1),]
 # Step 4 (Plots)
 
 ## 1) Convert DEGresult to data.frame()
+
+```R
+DEGresult = data.frame(results(CountsNorm))
+```
+
+
