@@ -53,7 +53,7 @@ The "fastq-dump" command is a useful tool for converting prefetched runs from th
     * SRR0000001_2.fastq => right pair
     * SRR0000001.fastq => unpaired 
  
- **we can remove unpaired files**
+ ** * we can effectively remove unpaired files from the dataset**
 
 ## 1-3) Download, install and use of FastQC library
 
