@@ -31,7 +31,7 @@ Open SRA Toolkit bin Directory:
 ```linux
 ./vdb-config --interactive
 ```
-We run this command because it set a some configuration that do not download unnecessary files during prefetch command
+This command is executed to configure specific settings that prevent the download of unnecessary files during the prefetch command.
 
 ```linux
 ./prefetch -p SRR—Accession-Number -O ~/Desktop
