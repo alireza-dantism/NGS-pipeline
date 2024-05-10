@@ -328,3 +328,11 @@ CountsNorm = DESeq(DESeq2Obj)
         * colData names(2): Population sizeFactor
 
 
+## 3-3) Normalizing steps
+
+```R
+DEGresult = results(CountsNorm)
+DEGresult = DEGresult[which(DEGresult$pvalue < 0.05),]
+DEGresult = DEGresult[which(DEGresult$log2FoldChange >= 1),]
+DEGresult = DEGresult[which(DEGresult$log2FoldChange <= -1),]
+```
