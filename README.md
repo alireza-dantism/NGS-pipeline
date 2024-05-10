@@ -365,6 +365,7 @@ Plot of normalized counts for a single gene on log scale
 ```R
 plotCounts(CountsNorm, gene = "NM_013444", intgroup = "Population")
 ```
+![alt text](https://github.com/alireza-dantism/NGS-pipeline/raw/main/images/plotCounts.png?raw=true "plotCounts")
 
 
 
