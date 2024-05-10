@@ -196,6 +196,8 @@ samtools sort -@ 1 -o map/ERR188044_chrX.bam map/ERR188044_chrX.sam
 
 ## 2-3) Counting by htseq-count
 
+https://htseq.readthedocs.io/en/master/install.html
+
 Given a file with aligned sequencing reads and a list of genomic features, htseq-count can be used to count how many reads map to each feature.
 
 **Requires .gtf file (Genome Transfer Format)**
