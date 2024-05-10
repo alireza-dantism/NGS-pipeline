@@ -44,7 +44,9 @@ The "prefetch" command is used to download the run file along with its dependenc
 ```linux
 ./fastq-dump SRR—Accession-Number.sra —split-3 --outdir ~/Desktop
 ```
-can be used to convert the prefetched Runs from compressed SRA format to fastq
+
+The "fastq-dump" command is a useful tool for converting prefetched runs from the compressed SRA format to the fastq format. It allows for the conversion of SRA files into a more commonly used and easily readable format for downstream analysis.
+
 * Input => .sra file from previous step
 * Output => .fastq files
     * SRR0000001_1.fastq => left pair
