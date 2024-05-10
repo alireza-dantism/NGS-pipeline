@@ -368,4 +368,14 @@ plotCounts(CountsNorm, gene = "NM_013444", intgroup = "Population")
 ![alt text](https://github.com/alireza-dantism/NGS-pipeline/raw/main/images/plotCounts.png?raw=true "plotCounts")
 
 
+## 4-4) plotMA()
+
+MA-plot from base means and log fold changes
+
+```R
+plotMA(CountsNorm)
+```
+![alt text](https://github.com/alireza-dantism/NGS-pipeline/raw/main/images/plotMA.png?raw=true "plotMA")
+
+
 
