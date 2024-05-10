@@ -34,9 +34,10 @@ Open SRA Toolkit bin Directory:
 This command is executed to configure specific settings that prevent the download of unnecessary files during the prefetch command.
 
 ```linux
-./prefetch -p SRR—Accession-Number -O ~/Desktop
+./prefetch -p SRR0000001 -O ~/Desktop
 ```
-prefetch <accession> will download the <accession> run file and its dependencies
+The "prefetch" command is used to download the run file along with its dependencies.
+
 * Input => accession number such as SRR0000001
 * Output => .sra file of accession number such as SRR0000001.sra
 
