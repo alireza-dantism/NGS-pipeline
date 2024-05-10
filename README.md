@@ -257,10 +257,13 @@ for (i in dir("/project-result/3-countsOutput/", full.names = T)[-1]) {
   Counts = cbind((Counts), read.table(i)[,2])
 }
 ```
+Changing rows names
 
 ```R
 rownames(Counts) = read.table('/3-countsOutput/ERR188044.count', sep = '\t')[,1]
 ```
+
+Changing columns name
 
 ```R
 Counts = Counts[-grep("__",rownames(Counts)),] 
