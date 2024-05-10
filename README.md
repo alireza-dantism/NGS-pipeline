@@ -304,5 +304,27 @@ Class = data.frame(Population = as.factor(Class))
     * 11        YRI
     * 12        YRI
 
+## 3-2) Using DESeq2 based on (Class, CountsMatrix)
+
+```R
+DESeq2Obj = DESeqDataSetFromMatrix(CountsMatrix, Class, ~Population)
+```
+
+* Output => Creating a DESeq object 
+
+```R
+CountsNorm = DESeq(DESeq2Obj)
+```
+
+* Output => Creating Scaling Factor Matrix
+    * CountsNorm includes:
+        * class: DESeqDataSet 
+        * dim: 2087 12 
+        * metadata(1): version
+        * assays(4): counts mu H cooks
+        * rownames(2087): NM_000032 NM_000033 ... __not_aligned __alignment_not_unique
+        * rowData names(22): baseMean baseVar ... deviance maxCooks
+        * colnames(12): ERR188044 ERR188104 ... ERR188454 ERR204916
+        * colData names(2): Population sizeFactor
 
 
