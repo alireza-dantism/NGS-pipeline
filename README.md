@@ -277,7 +277,7 @@ CountsMatrix = as.matrix(Counts)
 
 * Output => Convert Counts into the Matrix
 
-Tip: as.matrix() mixed logical-integer will give a nteger matrix
+Tip: as.matrix() mixed logical-integer will give a integer matrix
 
 ```R
 Class = read.csv("geuvadis_phenodata.csv")[,3]
