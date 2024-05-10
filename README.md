@@ -5,13 +5,15 @@ Just a number of steps to analyze data
 
 ## 1-1) Preparing Data
 
-Searching project number: PRJNA000001 in https://www.ncbi.nlm.nih.gov/sra
+To search for project number PRJNA000001 in the SRA database on https://www.ncbi.nlm.nih.gov/sra, follow these steps:
 
-In the opened page under study section click on all runs
+1. Go to the website: https://www.ncbi.nlm.nih.gov/sra.
+2. In the search bar, enter the project number "PRJNA000001" and press Enter.
+3. On the opened page, navigate to the "Study" section.
+4. Click on the "All Runs" option within the study section.
+5. You will be presented with a list of SRR numbers associated with the project.
 
-Then we need all SRR numbers
-
-_Project number is in paper_
+**Tip:** If you have the relevant research paper, you may find the project number (PRJNA000001) mentioned there, which can help you locate the specific project in the SRA database.
 
 **NCBI Run Browser:**
 
