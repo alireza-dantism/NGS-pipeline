@@ -345,4 +345,6 @@ DEGresult = DEGresult[which(DEGresult$log2FoldChange <= -1),]
 DEGresult = data.frame(results(CountsNorm))
 ```
 
-
+| # |  baseMean  |  log2FoldChange  |  lfcSE  |  stat  |  pvalue  |  padj  |
+| --- | --- | --- | --- | --- | --- | --- |
+|  NM_000032  | 8.01E-02 | 0.401214 | 3.11654 | 0.128737 | 0.897566 | NA |
